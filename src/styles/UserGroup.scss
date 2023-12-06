@@ -1,0 +1,82 @@
+.user-group {
+  display: flex;
+  height: 100%;
+  width: 100%;
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+
+    .btn-add {
+      button {
+        padding: 0.2rem;
+        background-color: rgba(0, 0, 255, 0.711);
+        color: white;
+        border: none;
+        border-radius: 0.5rem;
+      }
+    }
+    .user-group-table {
+      height: 85vh;
+      overflow: auto;
+      padding-right: 1px;
+
+      &::-webkit-scrollbar {
+        width: 0.2rem;
+        background-color: aliceblue;
+
+        &-thumb {
+          background-color: rgba(105, 105, 105, 0.52);
+          border-radius: 4rem;
+        }
+      }
+
+      table {
+        width: 100%;
+        thead {
+          th {
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            text-align: center;
+            font-size: 1.2rem;
+            height: 3rem;
+          }
+        }
+
+        .body {
+          max-height: 620px;
+          overflow: auto;
+
+          tr {
+            &:hover {
+              background-color: rgba(0, 0, 0, 0.1);
+            }
+            td {
+              border: 1px solid rgba(0, 0, 0, 0.2);
+              padding-left: 5px;
+              height: 2.3rem;
+            }
+
+            .index {
+              text-align: center;
+            }
+
+            .button {
+              text-align: center;
+
+              .btn-edit {
+                color: rgb(191, 191, 12);
+              }
+
+              .btn-delete {
+                color: red;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
