@@ -15,8 +15,7 @@ function App() {
           <Route exact path="/sign-up" element={<SignUp />} />
           <Route exact path="/users" element={<Users />} />
           <Route exact path="/user-group" element={<UserGroup />} />
-          <Route exact path="/home" element={<Home />} />
-          <Route exact path="/" element={<Login />} />
+          <Route exact path="/" element={<Home />} />
         </Routes>{" "}
       </BrowserRouter>
     </div>

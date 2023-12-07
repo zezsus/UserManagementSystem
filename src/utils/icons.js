@@ -1,6 +1,6 @@
 import { IoMdAdd } from "react-icons/io";
-import { MdDeleteForever } from "react-icons/md";
-import { FaRegEdit, FaGoogle, FaFacebookF } from "react-icons/fa";
+import { MdDeleteForever, MdOutlineErrorOutline } from "react-icons/md";
+import { FaRegEdit, FaFacebookF } from "react-icons/fa";
 import { TbLogout2 } from "react-icons/tb";
 
 const icons = {
@@ -8,8 +8,8 @@ const icons = {
   MdDeleteForever,
   FaRegEdit,
   IoMdAdd,
-  FaGoogle,
   FaFacebookF,
+  MdOutlineErrorOutline,
 };
 
 export default icons;

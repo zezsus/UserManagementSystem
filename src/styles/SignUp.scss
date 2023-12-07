@@ -17,10 +17,30 @@
     padding: 1rem;
     background-color: rgb(114, 235, 114);
     gap: 1rem;
-    min-width: 300px;
+    min-width: 350px;
 
-    h2{
-        text-transform: uppercase;
+    h2 {
+      text-transform: uppercase;
+    }
+
+    .error {
+      max-width: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background-color: red;
+      border-radius: 0.5rem;
+      color: white;
+      padding: 0 1rem;
+
+      span {
+        text-align: center;
+      }
+
+      svg {
+        width: 3rem;
+      }
     }
 
     .form-signUp {
