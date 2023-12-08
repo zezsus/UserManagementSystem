@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../styles/SignUp.scss";
+import "../styles/views/SignUp.scss";
 import icons from "../utils/icons";
 import { LOCAL_STORAGE_NAME, LOCAL_STORAGE_REGISTER } from "../utils/containts";
 

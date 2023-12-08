@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import icons from "../utils/icons";
 import { Link, useNavigate } from "react-router-dom";
-import "../styles/Login.scss";
+import "../styles/views/Login.scss";
 import { jwtDecode } from "jwt-decode";
 import { LOCAL_STORAGE_NAME, LOCAL_STORAGE_REGISTER } from "../utils/containts";
 import FacebookLogin from "react-facebook-login";

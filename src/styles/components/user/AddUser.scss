@@ -1,0 +1,75 @@
+.modal-dialog {
+  width: 400px !important;
+
+  .modal-header {
+    background-color: blue;
+    h1 {
+      font-size: 1.5rem !important;
+      text-transform: uppercase;
+      color: white;
+      font-weight: 500;
+    }
+  }
+
+  .modal-body {
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .add-email {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        label {
+          font-size: 1.2rem;
+          font-weight: 500;
+        }
+
+        input {
+          border: 1px solid rgba(128, 128, 128, 0.581);
+          border-radius: 0.5rem;
+          width: 80%;
+          margin-left: 2rem;
+          padding-left: 10px;
+          height: 35px;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
+      .add-permission {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+
+        .title {
+          font-size: 1.2rem;
+          font-weight: 500;
+        }
+
+        .permission {
+          margin-left: 2rem;
+
+          div {
+            display: flex;
+            gap: 0.3rem;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .modal-footer {
+    button {
+      width: 60px;
+    }
+
+    .close {
+      background-color: rgb(97, 97, 97) !important;
+    }
+  }
+}

@@ -1,13 +1,14 @@
 import React from "react";
 import icons from "../utils/icons";
-import "../styles/Users.scss";
-import Navbar from "./Navbar";
+import "../styles/views/UserGroup.scss";
+import Navbar from "../components/Navbar";
 
-const Users = () => {
+const UserGroup = () => {
   const { MdDeleteForever, FaRegEdit, IoMdAdd } = icons;
+
   return (
-    <div className="user-management">
-      <div className="left">
+    <div className="user-group">
+      <div className="nav-left">
         <Navbar />
       </div>
       <div className="right">
@@ -16,13 +17,12 @@ const Users = () => {
             <IoMdAdd size={25} title="New User" />
           </button>
         </div>
-
-        <div className="user-management-table">
+        <div className="user-group-table">
           <table>
             <thead>
               <tr>
                 <th>Index</th>
-                <th>User</th>
+                <th>Group</th>
                 <th>Permission</th>
                 <th>Action</th>
               </tr>
@@ -33,12 +33,8 @@ const Users = () => {
                 <td>abc</td>
                 <td>đăng nhập, truy cập home</td>
                 <td className="button">
-                  <FaRegEdit size={25} className="btn-edit" title="Edit" />
-                  <MdDeleteForever
-                    size={25}
-                    className="btn-delete"
-                    title="Delete"
-                  />
+                  <FaRegEdit size={25} className="btn-edit" />
+                  <MdDeleteForever size={25} className="btn-delete" />
                 </td>
               </tr>
             </tbody>
@@ -49,4 +45,4 @@ const Users = () => {
   );
 };
 
-export default Users;
+export default UserGroup;

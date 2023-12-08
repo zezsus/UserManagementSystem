@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import "../styles/Home.scss";
-import Navbar from "./Navbar";
+import "../styles/views/Home.scss";
 import { useNavigate } from "react-router-dom";
 import { LOCAL_STORAGE_NAME } from "../utils/containts";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
   const navigate = useNavigate();

@@ -1,10 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
-import Login from "./components/Login";
 import "./styles/App.scss";
-import UserGroup from "./components/UserGroup";
-import Users from "./components/Users";
-import SignUp from "./components/SignUp";
+import Login from "./views/Login";
+import SignUp from "./views/SignUp";
+import Users from "./views/Users";
+import UserGroup from "./views/UserGroup";
+import Home from "./views/Home";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -16,8 +17,19 @@ function App() {
           <Route exact path="/users" element={<Users />} />
           <Route exact path="/user-group" element={<UserGroup />} />
           <Route exact path="/" element={<Home />} />
-        </Routes>{" "}
+        </Routes>
       </BrowserRouter>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        theme="colored"
+      />
     </div>
   );
 }

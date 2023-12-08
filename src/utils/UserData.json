@@ -1,0 +1,33 @@
+[
+    {
+        "email": "admin@gmail.com",
+        "permission": [
+            "Create",
+            "Read",
+            "Edit",
+            "Delete",
+            "Login"
+        ]
+    },
+    {
+        "email": "demo1@gmail.com",
+        "permission": [
+            "Read",
+            "Login"
+        ]
+    },
+    {
+        "email": "demo2@gmail.com",
+        "permission": [
+            "Read",
+            "Login"
+        ]
+    },
+    {
+        "email": "demo3@gmail.com",
+        "permission": [
+            "Read",
+            "Login"
+        ]
+    }
+]
