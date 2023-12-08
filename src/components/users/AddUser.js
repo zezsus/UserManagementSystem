@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import "../../styles/components/user/AddUser.scss";
+import "../../styles/components/Modal.scss";
 import { LOCAL_STORAGE_USER } from "../../utils/containts";
 import { toast } from "react-toastify";
+import { v4 as uuidv4 } from "uuid";
 
 const permission = [
   {
@@ -26,7 +27,7 @@ const permission = [
   },
 ];
 
-const AddUser = () => {
+const AddUser = ({ handleAddUser }) => {
   const [email, setEmail] = useState("");
   const [checkedPermissions, setCheckedPermissions] = useState([]);
 
@@ -42,18 +43,10 @@ const AddUser = () => {
   };
 
   const handleAdd = () => {
-    const data = JSON.parse(localStorage.getItem(LOCAL_STORAGE_USER));
     if (!email || !checkedPermissions) {
       toast.error("Add failed. Missing Email or Permission");
     } else {
-      const newAccount = {
-        email: email,
-        permission: checkedPermissions,
-      };
-
-      const updateUser = [...data, newAccount];
-
-      localStorage.setItem(LOCAL_STORAGE_USER, JSON.stringify(updateUser));
+      handleAddUser(email, checkedPermissions);
     }
 
     handleModalClose();
