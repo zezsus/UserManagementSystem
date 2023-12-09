@@ -2,10 +2,8 @@ import React from "react";
 import "../../styles/components/Modal.scss";
 
 const DeleteUser = ({ handleDeleteUser, data }) => {
-  console.log(data);
-  const handleDelete = (email) => {
-    console.log(email);
-    handleDeleteUser(email);
+  const handleDelete = (id) => {
+    handleDeleteUser(id);
   };
   return (
     <div className="modal-dialog">

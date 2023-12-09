@@ -13,6 +13,7 @@ import { v4 as uuidv4 } from "uuid";
 const Users = () => {
   const { MdDeleteForever, FaRegEdit, IoMdAdd } = icons;
   const [data, setData] = useState([]);
+  const [editValue, setEditValue] = useState(null);
 
   useEffect(() => {
     const res = localStorage.getItem(LOCAL_STORAGE_USER);
@@ -24,6 +25,7 @@ const Users = () => {
     }
   }, []);
 
+  //Add user
   const handleAddUser = (email, permissions) => {
     const newAccount = {
       id: uuidv4(),
@@ -40,12 +42,43 @@ const Users = () => {
     toast.success("Add successfully");
   };
 
+  //Delete user
   const handleDeleteUser = (deleteUser) => {
-    console.log(deleteUser);
-    const updateUser = data.filter((data) => data.email !== deleteUser);
+    const updateUser = data.filter((data) => data.id !== deleteUser);
     setData(updateUser);
     localStorage.setItem(LOCAL_STORAGE_USER, JSON.stringify(updateUser));
   };
+
+  const handleEditUser = (user) => {
+    setEditValue(user);
+  };
+  const handleUserEditInfo = (updatedUser) => {
+    const updatedData = data.map((user) => {
+      if (user.id === updatedUser.id) {
+        return updatedUser;
+      }
+      return user;
+    });
+    setData(updatedData);
+    localStorage.setItem(LOCAL_STORAGE_USER, JSON.stringify(updatedData));
+    setEditValue(null);
+  };
+
+  // const getUserEditInfo = (info) => {
+  //   const updatedUsers = data.map((user) => {
+  //     if (user.id === info.id) {
+  //       return {
+  //         ...user,
+  //         email: info.email,
+  //         permissions: info.permissions,
+  //       };
+  //     } else {
+  //       return user;
+  //     }
+  //   });
+  //   setData(updatedUsers);
+  //   localStorage.setItem(LOCAL_STORAGE_USER, JSON.stringify(updatedUsers));
+  // };
 
   return (
     <div className="user-management">
@@ -92,15 +125,15 @@ const Users = () => {
                       <td>{user.email}</td>
                       <td>{user.permission + " "} </td>
                       <td className="button">
-                        <div>
+                        <span>
                           <FaRegEdit
                             size={25}
                             className="btn-edit"
                             title="Edit"
                             data-bs-toggle="modal"
                             data-bs-target="#editModal"
+                            onClick={() => handleEditUser(user)}
                           />
-
                           <div
                             className="modal fade"
                             id="editModal"
@@ -109,11 +142,14 @@ const Users = () => {
                             tabIndex="-1"
                             aria-labelledby="staticBackdropLabel"
                             aria-hidden="true">
-                            <EditUser />
+                            <EditUser
+                              editValue={editValue}
+                              handleUserEditInfo={handleUserEditInfo}
+                            />
                           </div>
-                        </div>
+                        </span>
 
-                        <div>
+                        <span>
                           <MdDeleteForever
                             size={25}
                             className="btn-delete"
@@ -132,17 +168,16 @@ const Users = () => {
                             aria-hidden="true">
                             <DeleteUser
                               handleDeleteUser={handleDeleteUser}
-                              data={user.email}
+                              data={user.id}
                             />
                           </div>
-                        </div>
+                        </span>
                       </td>
                     </tr>
                   );
                 })}
             </tbody>
           </table>
-          <EditUser />
         </div>
       </div>
     </div>

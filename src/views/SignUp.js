@@ -26,7 +26,6 @@ const SignUp = () => {
         setTimeout(() => setError(""), 3000);
       } else {
         const data = JSON.parse(localStorage.getItem(LOCAL_STORAGE_REGISTER));
-        console.log(data);
         if (email === data) {
           setError("Email already exists");
           setTimeout(() => setError(""), 3000);
@@ -41,7 +40,6 @@ const SignUp = () => {
     }
   };
 
-  console.log(error);
   return (
     <div className="signUp">
       <div className=" container">

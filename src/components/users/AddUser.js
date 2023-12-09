@@ -1,31 +1,7 @@
 import React, { useState } from "react";
 import "../../styles/components/Modal.scss";
-import { LOCAL_STORAGE_USER } from "../../utils/containts";
 import { toast } from "react-toastify";
-import { v4 as uuidv4 } from "uuid";
-
-const permission = [
-  {
-    name: "Create",
-    value: "Create",
-  },
-  {
-    name: "Read",
-    value: "Read",
-  },
-  {
-    name: "Edit",
-    value: "Edit",
-  },
-  {
-    name: "Delete",
-    value: "Delete",
-  },
-  {
-    name: "Login",
-    value: "Login",
-  },
-];
+import permission from "../../utils/Permission.json";
 
 const AddUser = ({ handleAddUser }) => {
   const [email, setEmail] = useState("");

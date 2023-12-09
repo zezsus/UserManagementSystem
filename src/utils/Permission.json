@@ -1,0 +1,22 @@
+ [
+  {
+    "name": "Create",
+    "value": "Create"
+  },
+  {
+    "name": "Read",
+    "value": "Read"
+  },
+  {
+    "name": "Edit",
+    "value": "Edit"
+  },
+  {
+    "name": "Delete",
+    "value": "Delete"
+  },
+  {
+    "name": "Login",
+    "value": "Login"
+  }
+]
